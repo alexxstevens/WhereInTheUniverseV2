@@ -48,7 +48,7 @@ import Header from './Header';
         }
 
        onSignUpPress() {
-          this.props.navigation.navigate('Home');
+          this.props.navigation.navigate('Profiles');
 
         }
       }

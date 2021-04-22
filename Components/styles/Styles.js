@@ -1,13 +1,18 @@
 import {StyleSheet} from 'react-native';
+import backgroundGalaxy from "../../assets/galaxyBackground.jpg";
+
+const mainColor = "#1c1c45";
+const secondaryColor = "orange";
+
 
 
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1c1c45',
+    backgroundColor: mainColor,
   },
   header: {
-    backgroundColor: '#1c1c45',
+    backgroundColor: mainColor,
     paddingTop: 20,
     flex: 1,
     flexDirection:'row',
@@ -46,7 +51,7 @@ const Styles = StyleSheet.create({
     marginTop: 60,
     marginBottom: 25,
     textAlign: 'center',
-    color: '#1c1c45',
+    color: mainColor,
   },
   loginFormView: {
     flex: 1,
@@ -68,7 +73,7 @@ const Styles = StyleSheet.create({
     height: 40,
     width:'80%',
     borderRadius:10,
-    backgroundColor : "#1c1c45",
+    backgroundColor : mainColor,
     marginLeft :'auto',
     marginRight:'auto',
     marginTop :20,
@@ -87,15 +92,15 @@ const Styles = StyleSheet.create({
   },
   homeHeading: {
     fontSize: 40,
-    color: 'orange',
+    color: secondaryColor,
     fontWeight: '800',
     textAlign: 'center',
-    backgroundColor: '#1c1c45',
+    backgroundColor: mainColor,
     paddingTop: 10,
     paddingBottom: 10,
   },
   homePlanet: {
-    color: '#1c1c45',
+    color: mainColor,
     backgroundColor: 'white',
     fontSize: 20,
     fontWeight: 'bold',
@@ -103,7 +108,7 @@ const Styles = StyleSheet.create({
     width: '20%',
   },
   homeStats: {
-    color: 'orange',
+    color: secondaryColor,
     backgroundColor: 'white',
     fontSize: 10,
     fontWeight: 'bold',
@@ -111,8 +116,75 @@ const Styles = StyleSheet.create({
 
   },
   homeBarBorder: {
-    borderColor: 'orange',
+    borderColor: secondaryColor,
     borderWidth: 1,
+  },
+  //Profile Card
+  cardContainer: {
+    backgroundColor: mainColor,
+    borderColor: secondaryColor,
+    borderRadius: 30,
+    borderWidth: 5,
+    width: 320,
+    height: 400,
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    marginTop: 30,
+  },
+  cardContentName: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 25,
+    fontFamily: 'Futura',
+    marginBottom: 10,
+  },
+  cardContentHome: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+    fontFamily: 'Futura',
+    marginBottom: 10,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+    cardContentOccupation: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontFamily: 'Futura',
+    marginBottom: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    borderBottomColor: secondaryColor,
+    borderBottomWidth: 2,
+  },
+  cardContentBio: {
+    color: 'white',
+    fontFamily: 'Futura',
+    marginBottom: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    borderBottomColor: secondaryColor,
+    borderBottomWidth: 2,
+  },
+  userImage: {
+    borderRadius: 100,
+    borderColor: secondaryColor,
+    borderWidth: 3,
+    width: 80,
+    height: 100,
+    marginTop: 30,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 15,
+  },
+  bottomBorder: {
+    borderBottomColor: secondaryColor,
+    borderBottomWidth: 2,
+    width: '80%',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    marginBottom: 15,
   }
 });
 
