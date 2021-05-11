@@ -3,8 +3,7 @@ import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, TouchableHigh
 import Styles from './styles/Styles';
 import Header from './Header';
 
-      
-      const appId = "1047121222092614";
+    
 
       export default class LoginScreen extends Component {
         render() {
@@ -17,7 +16,6 @@ import Header from './Header';
                   <View style={Styles.loginFormView}>
                   <Text style={Styles.logoText}>Login / SignUp</Text>
                     <TextInput placeholder="Username" placeholderColor="#c4c3cb" style={Styles.loginFormTextInput} />
-                    <TextInput placeholder="Password" placeholderColor="#c4c3cb" style={Styles.loginFormTextInput} secureTextEntry={true}/>
                     <TouchableHighlight 
                         style = {Styles.highlight}>
                       <Button
@@ -35,6 +33,15 @@ import Header from './Header';
                         color="#3897f1"
                       />
                     </TouchableHighlight>
+                    <TouchableHighlight 
+                        style = {Styles.highlight}>
+                      <Button
+                        style={Styles.signUpButton}
+                        onPress={() => this.onViewProfilePress()}
+                        title="View Users"
+                        color="#3897f1"
+                      />
+                    </TouchableHighlight>
                   </View>
                 </View>
               </TouchableWithoutFeedback>
@@ -43,11 +50,15 @@ import Header from './Header';
           );
         }
 
-        onLoginPress() {
-           this.props.navigation.navigate('Home');
+      onLoginPress() {
+          this.props.navigation.navigate('Home');
         }
 
-       onSignUpPress() {
+      onSignUpPress() {
+          this.props.navigation.navigate('SignUp');
+
+        }
+      onViewProfilePress() {
           this.props.navigation.navigate('Profiles');
 
         }

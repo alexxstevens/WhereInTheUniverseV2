@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {Keyboard, Image, View, Text, TouchableWithoutFeedback, KeyboardAvoidingView} from 'react-native';
+import {Keyboard, Image, View, Text, TouchableWithoutFeedback, ScrollView, useColorScheme} from 'react-native';
 import Styles from './styles/Styles';
 import Header from './Header';
+import CenterMessage from './CenterMessage';
 
     
 
@@ -10,38 +11,34 @@ import Header from './Header';
           return (
             <>
               <Header/>
-              <KeyboardAvoidingView style={Styles.containerView} behavior="padding">
-              <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                  <View style={Styles.cardContainer}>
-                    <View>
-                      <Image style={Styles.userImage} source={require('../assets/user.jpg')}/>
-                    </View>
-                    <View>
-                      <Text style={Styles.cardContentName}>Paul</Text>
-                    </View>
-                    <View>
-                      <Text style={Styles.cardContentOccupation}>Influencer/Teacher/Healer/Adventurer</Text>
-                    </View>
-                    <View style={Styles.bottomBorder}>
-                      <Text style={Styles.cardContentHome}>Andromeda Galaxy</Text>
-                    </View>
-                    <View>
-                      <Text style={Styles.cardContentBio}>For the last 60 years, I've lived in a secluded region in New Mexico. I have an ecclectic background, including experience as a pop culture influencer, miraculous healer, and bomb disseminator of universal knowledge and mysteries. But the main thing, I'm just a chill dude in search of my ride back home.  </Text>
-                    </View>
-                  </View>
-              </TouchableWithoutFeedback>
-              </KeyboardAvoidingView>
+              <ScrollView style={Styles.containerView} behavior="padding">
+                <View>
+                  {!users.length && <CenterMessage message="No current users"/>}
+                  {Users.map((item, index) => (
+                  <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                      <View style={Styles.cardContainer}>
+                        <View>
+                          <Image style={Styles.userImage} source={require('../assets/user.jpg')}/>
+                        </View>
+                        <View>
+                          <Text style={Styles.cardContentName}>{item.name}</Text>
+                        </View>
+                        <View>
+                          <Text style={Styles.cardContentOccupation}>{item.occupation}</Text>
+                        </View>
+                        <View style={Styles.bottomBorder}>
+                          <Text style={Styles.cardContentHome}>{item.home}</Text>
+                        </View>
+                        <View>
+                          <Text style={Styles.cardContentBio}>{item.bio}</Text>
+                        </View>
+                      </View>
+                  </TouchableWithoutFeedback>
+                  ))};
+                </View>
+              </ScrollView>
             </>
           );
-        }
-
-        onLoginPress() {
-           this.props.navigation.navigate('Home');
-        }
-
-       onSignUpPress() {
-          this.props.navigation.navigate('Profiles');
-
-        }
       }
+    }
 
